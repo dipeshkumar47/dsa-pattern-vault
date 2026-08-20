@@ -1,20 +1,22 @@
 //article : https://www.geeksforgeeks.org/dsa/function-to-check-if-a-singly-linked-list-is-palindrome/
 
+// neetcode
+// best video for reversal: https://youtu.be/G0_I-ZF0S38?si=dqVdOPlPbEprqmWh
+
 
 // optimal solution:
-
-
 // Function to reverse a linked list
+
 Node* reverse(Node* head) {
     Node* prev = nullptr;
     Node* curr = head;
     Node* next;
 
     while (curr) {
-        next = curr->next;
-        curr->next = prev;
-        prev = curr;
-        curr = next;
+        next = curr->next;          // Store next node for moving 'curr' forward
+        curr->next = prev;          // Reverse the link 
+        prev = curr;                // Update prev to current node
+        curr = next;                // Move curr forward
     }
     return prev;
 }
